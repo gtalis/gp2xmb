@@ -25,11 +25,17 @@
 
 #include "gfx.h"
 #include "batterymon.h"
+#include <time.h>
 
+extern SFont_Font *font_normal;
 int tick_battery = 0;
 short batt_loaded = 0;
 
 SDL_Surface *battery_icon = NULL;
+
+time_t  time_now;
+struct tm *gm_time_now;
+char timestr[10];
 
 int battery_init()
 {
@@ -109,8 +115,15 @@ int battery_draw(SDL_Surface * screen)
         }
     }
 
+    /* get time now */
+    time(&time_now);
+    gm_time_now = gmtime(&time_now);
+    snprintf(timestr, 10, "%02d:%02d", gm_time_now->tm_hour, gm_time_now->tm_min);
+
     if (battery_icon)
     {
+        /* Draw time */
+        gfx_draw_text(screen, font_normal, 10, 10, 0, 0, timestr);
         gfx_draw_image(battery_icon, screen->w - (battery_icon->w + 10),
                        10, screen);
     }
