@@ -334,7 +334,14 @@ int main(int argc, char *argv[])
 
 void *gp2xmb_tload(void *arg)
 {
-	int delay = SDL_GetTicks() + SPLASH_DELAY;
+    int delay = SDL_GetTicks();
+
+    int splashdelay = 0;
+    config_lookup_int(&CONFIG, "splashdelay", (long int *)&splashdelay);
+
+   printf("splashdelay is %d\n", splashdelay);
+
+   delay += splashdelay;
 
     /* start drawing the background and progress bar bere */
     progress_set(0);

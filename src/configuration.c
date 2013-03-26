@@ -130,6 +130,15 @@ void cfg_init()
                                CONFIG_TYPE_BOOL);
         config_setting_set_bool(pcfg, 0);
     }
+
+    if (!(pcfg = config_lookup(&CONFIG, "splashdelay")))
+    {
+        pcfg =
+            config_setting_add(config_root_setting(&CONFIG), "splashdelay",
+                               CONFIG_TYPE_INT);
+        config_setting_set_int(pcfg, 0);
+    }
+
 }
 
 void cfg_destroy()
