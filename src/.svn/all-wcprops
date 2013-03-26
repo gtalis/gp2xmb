@@ -1,0 +1,323 @@
+K 25
+svn:wc:ra_dav:version-url
+V 33
+/svn/gp2xmb/!svn/ver/55/trunk/src
+END
+progressbar.h
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/gp2xmb/!svn/ver/22/trunk/src/progressbar.h
+END
+SFont.h
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/gp2xmb/!svn/ver/36/trunk/src/SFont.h
+END
+utils.c
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/gp2xmb/!svn/ver/22/trunk/src/utils.c
+END
+popup.c
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/gp2xmb/!svn/ver/51/trunk/src/popup.c
+END
+settings_cb.c
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/gp2xmb/!svn/ver/48/trunk/src/settings_cb.c
+END
+joystick.h
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/gp2xmb/!svn/ver/22/trunk/src/joystick.h
+END
+utils.h
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/gp2xmb/!svn/ver/41/trunk/src/utils.h
+END
+sub_shortcuts.c
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/gp2xmb/!svn/ver/53/trunk/src/sub_shortcuts.c
+END
+popup.h
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/gp2xmb/!svn/ver/51/trunk/src/popup.h
+END
+volumecontrol.c
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/gp2xmb/!svn/ver/37/trunk/src/volumecontrol.c
+END
+settings_cb.h
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/gp2xmb/!svn/ver/30/trunk/src/settings_cb.h
+END
+mp3_player.c
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/gp2xmb/!svn/ver/44/trunk/src/mp3_player.c
+END
+sub_shortcuts.h
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/gp2xmb/!svn/ver/22/trunk/src/sub_shortcuts.h
+END
+volumecontrol.h
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/gp2xmb/!svn/ver/37/trunk/src/volumecontrol.h
+END
+background.c
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/gp2xmb/!svn/ver/52/trunk/src/background.c
+END
+mp3_player.h
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/gp2xmb/!svn/ver/22/trunk/src/mp3_player.h
+END
+vorbis_player.c
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/gp2xmb/!svn/ver/22/trunk/src/vorbis_player.c
+END
+background.h
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/gp2xmb/!svn/ver/36/trunk/src/background.h
+END
+gfx.c
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/svn/gp2xmb/!svn/ver/55/trunk/src/gfx.c
+END
+vorbis_player.h
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/gp2xmb/!svn/ver/22/trunk/src/vorbis_player.h
+END
+scripts.c
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/gp2xmb/!svn/ver/41/trunk/src/scripts.c
+END
+gfx.h
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/svn/gp2xmb/!svn/ver/52/trunk/src/gfx.h
+END
+sub_music.c
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/gp2xmb/!svn/ver/37/trunk/src/sub_music.c
+END
+itemlist.c
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/gp2xmb/!svn/ver/51/trunk/src/itemlist.c
+END
+splash.c
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/gp2xmb/!svn/ver/41/trunk/src/splash.c
+END
+scripts.h
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/gp2xmb/!svn/ver/41/trunk/src/scripts.h
+END
+messagebox.c
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/gp2xmb/!svn/ver/55/trunk/src/messagebox.c
+END
+sub_music.h
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/gp2xmb/!svn/ver/22/trunk/src/sub_music.h
+END
+itemlist.h
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/gp2xmb/!svn/ver/51/trunk/src/itemlist.h
+END
+gp2xmb.c
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/gp2xmb/!svn/ver/55/trunk/src/gp2xmb.c
+END
+splash.h
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/gp2xmb/!svn/ver/41/trunk/src/splash.h
+END
+sfx.c
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/svn/gp2xmb/!svn/ver/37/trunk/src/sfx.c
+END
+messagebox.h
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/gp2xmb/!svn/ver/48/trunk/src/messagebox.h
+END
+sub_photo.c
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/gp2xmb/!svn/ver/51/trunk/src/sub_photo.c
+END
+mediabar.c
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/gp2xmb/!svn/ver/48/trunk/src/mediabar.c
+END
+gp2xmb.h
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/gp2xmb/!svn/ver/52/trunk/src/gp2xmb.h
+END
+sfx.h
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/svn/gp2xmb/!svn/ver/22/trunk/src/sfx.h
+END
+img_manager.c
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/gp2xmb/!svn/ver/22/trunk/src/img_manager.c
+END
+configuration.c
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/gp2xmb/!svn/ver/37/trunk/src/configuration.c
+END
+sub_photo.h
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/gp2xmb/!svn/ver/22/trunk/src/sub_photo.h
+END
+mediabar.h
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/gp2xmb/!svn/ver/48/trunk/src/mediabar.h
+END
+sub_settings.c
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/gp2xmb/!svn/ver/50/trunk/src/sub_settings.c
+END
+img_manager.h
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/gp2xmb/!svn/ver/22/trunk/src/img_manager.h
+END
+configuration.h
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/gp2xmb/!svn/ver/22/trunk/src/configuration.h
+END
+sub_settings.h
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/gp2xmb/!svn/ver/30/trunk/src/sub_settings.h
+END
+gp2x.c
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/svn/gp2xmb/!svn/ver/22/trunk/src/gp2x.c
+END
+sub_game.c
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/gp2xmb/!svn/ver/48/trunk/src/sub_game.c
+END
+batterymon.c
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/gp2xmb/!svn/ver/22/trunk/src/batterymon.c
+END
+gp2x.h
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/svn/gp2xmb/!svn/ver/36/trunk/src/gp2x.h
+END
+sub_game.h
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/gp2xmb/!svn/ver/22/trunk/src/sub_game.h
+END
+progressbar.c
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/gp2xmb/!svn/ver/50/trunk/src/progressbar.c
+END
+SFont.c
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/gp2xmb/!svn/ver/36/trunk/src/SFont.c
+END
+batterymon.h
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/gp2xmb/!svn/ver/22/trunk/src/batterymon.h
+END

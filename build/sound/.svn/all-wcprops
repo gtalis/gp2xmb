@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/gp2xmb/!svn/ver/41/trunk/build/sound
+END
+xmb_load.wav
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/gp2xmb/!svn/ver/41/trunk/build/sound/xmb_load.wav
+END
+xmb_back.wav
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/gp2xmb/!svn/ver/5/trunk/build/sound/xmb_back.wav
+END
+xmb_run.wav
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/gp2xmb/!svn/ver/31/trunk/build/sound/xmb_run.wav
+END
+xmb_move.wav
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/gp2xmb/!svn/ver/5/trunk/build/sound/xmb_move.wav
+END
+xmb_ok.wav
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/gp2xmb/!svn/ver/5/trunk/build/sound/xmb_ok.wav
+END
