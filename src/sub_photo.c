@@ -29,17 +29,6 @@
 #include "itemlist.h"
 #include "popup.h"
 
-/* Why do I need to specify these - why does not dirent do its job? */
-extern int scandir(__const char *__restrict __dir,
-                   struct dirent ***__restrict __namelist,
-                   int (*__selector) (__const struct dirent *),
-                   int (*__cmp) (__const void *, __const void *))
-__nonnull((1, 2));
-
-extern int alphasort(__const void *__e1, __const void *__e2)
-__THROW __attribute_pure__ __nonnull((1, 2));
-
-
 #define PICONSIZE 32
 
 /* stealing variables from the mediabar */
@@ -203,6 +192,7 @@ void *photo_thread_browse(void *arg)
     struct dirent **namelist;
     int files = 0;
     unsigned typeloop = 0, i = 0;
+    int photopreview = 0;
 
 	xmb_activateFlag(XMB_SYNC);
 
@@ -302,7 +292,8 @@ void *photo_thread_browse(void *arg)
     pthread_mutex_unlock(&photo_lock);
 
 
-	if (config_lookup_bool(&CONFIG, "photopreview"))
+      config_lookup_bool(&CONFIG, "photopreview", &photopreview);
+      if (photopreview)
 	{
 		tlistitem *pcurr = NULL;
 		SDL_Surface *icon = NULL;

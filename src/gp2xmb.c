@@ -258,7 +258,9 @@ int main(int argc, char *argv[])
                 {
                     if (keys[i].func)
                     {
-                        if (config_lookup_bool(&CONFIG, "swapXB")
+                        int swapXB = 0;
+                         config_lookup_bool(&CONFIG, "swapXB", &swapXB);
+                        if (swapXB
                             && (GP2X_BUTTON_X == i || GP2X_BUTTON_B == i))
                         {
                             if (GP2X_BUTTON_X == i)

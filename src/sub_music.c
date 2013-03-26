@@ -30,16 +30,6 @@
 #include <sys/types.h>
 #include <dirent.h>
 
-/* Why do I need to specify these - why does not dirent do its job? */
-extern int
-scandir(__const char *__restrict __dir,
-        struct dirent ***__restrict __namelist,
-        int (*__selector) (__const struct dirent *),
-        int (*__cmp) (__const void *, __const void *)) __nonnull((1, 2));
-
-extern int alphasort(__const void *__e1, __const void *__e2)
-__THROW __attribute_pure__ __nonnull((1, 2));
-
 #include <SDL.h>
 #include <SDL_mixer.h>
 #include <SDL_gfxPrimitives.h>

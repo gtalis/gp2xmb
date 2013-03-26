@@ -643,8 +643,10 @@ void sub_shc_handle_input(unsigned int button)
             if (curr)
             {
                 char *dir_name = (char *) calloc(1, 1024);
+               int outro = 0;
 
-                if (config_lookup_bool(&CONFIG, "outro"))
+               config_lookup_bool(&CONFIG, "outro", &outro);
+                if (outro)
                     gfx_draw_outro(SDL_GetVideoSurface());
 
                 gp2xmb_deinit();

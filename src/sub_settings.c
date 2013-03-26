@@ -255,17 +255,18 @@ void sub_settings_draw(SDL_Surface * screen)
                 {
                 case 0:
                     {
+                         int photopreview = 0;
+                         config_lookup_bool(&CONFIG,
+                                                            "photopreview", &photopreview);
                         POPUP_setrevert(callback_photopreview,
-                                        !config_lookup_bool(&CONFIG,
-                                                            "photopreview"));
+                                        !photopreview);
 
                         POPUP_add(NULL, "Enabled", callback_photopreview,
                                   0);
                         POPUP_add(NULL, "Disabled", callback_photopreview,
                                   1);
 
-                        POPUP_setselected(!config_lookup_bool
-                                          (&CONFIG, "photopreview"));
+                        POPUP_setselected(!photopreview);
                     }
                     break;
                 }
@@ -277,10 +278,11 @@ void sub_settings_draw(SDL_Surface * screen)
                 case 0:        /* Background Theme */
                     {
                         int i = 0;
-
+                         int bgtheme = 0;
+                         config_lookup_int(&CONFIG,
+                                                          "bgtheme", (long int *)&bgtheme);
                         POPUP_setrevert(callback_bgtheme,
-                                        config_lookup_int(&CONFIG,
-                                                          "bgtheme"));
+                                        bgtheme);
 
                         for (;
                              i <
@@ -297,8 +299,7 @@ void sub_settings_draw(SDL_Surface * screen)
                                       callback_bgtheme, i);
                         }
 
-                        POPUP_setselected(config_lookup_int
-                                          (&CONFIG, "bgtheme"));
+                        POPUP_setselected(bgtheme);
                     }
                     break;
                 case 1:        /* Icon Theme */
@@ -315,16 +316,17 @@ void sub_settings_draw(SDL_Surface * screen)
                     break;
                 case 3:        /* Wallpaper */
                     {
+                         int usewallpaper = 0;
+                         config_lookup_bool(&CONFIG,
+                                                            "usewallpaper", &usewallpaper);
                         POPUP_setrevert(callback_wallpaper,
-                                        !config_lookup_bool(&CONFIG,
-                                                            "usewallpaper"));
+                                        !usewallpaper);
 
                         POPUP_add(NULL, "Use", callback_wallpaper, 0);
                         POPUP_add(NULL, "Do Not Use", callback_wallpaper,
                                   1);
 
-                        POPUP_setselected(!config_lookup_bool
-                                          (&CONFIG, "usewallpaper"));
+                        POPUP_setselected(!usewallpaper);
                     }
                     break;
                 }
@@ -347,23 +349,26 @@ void sub_settings_draw(SDL_Surface * screen)
 
                 case 2:
                     {
+                         int swapXB = 0;
+                         config_lookup_bool(&CONFIG,
+                                                           "swapXB", &swapXB);
                         POPUP_setrevert(callback_swapXB,
-                                        config_lookup_bool(&CONFIG,
-                                                           "swapXB"));
+                                        swapXB);
 
                         POPUP_add(NULL, "Default", callback_swapXB, 0);
                         POPUP_add(NULL, "GP2X Style", callback_swapXB, 1);
 
-                        POPUP_setselected(config_lookup_bool
-                                          (&CONFIG, "swapXB"));
+                        POPUP_setselected(swapXB);
                     }
                     break;
 
                 case 3:
                     {
+                         int defaultmenu = 0;
+                         config_lookup_int(&CONFIG,
+                                                          "defaultmenu", (long int *)&defaultmenu);
                         POPUP_setrevert(callback_defaultmenu,
-                                        config_lookup_int(&CONFIG,
-                                                          "defaultmenu"));
+                                        defaultmenu);
 
                         POPUP_add(NULL, "Settings", callback_defaultmenu,
                                   0);
@@ -372,22 +377,22 @@ void sub_settings_draw(SDL_Surface * screen)
                         POPUP_add(NULL, "Video", callback_defaultmenu, 3);
                         POPUP_add(NULL, "Game", callback_defaultmenu, 4);
 
-                        POPUP_setselected(config_lookup_int
-                                          (&CONFIG, "defaultmenu"));
+                        POPUP_setselected(defaultmenu);
                     }
                     break;
 
                 case 4:
                     {
+                         int outro = 0;
+                         config_lookup_bool(&CONFIG,
+                                                            "outro", &outro);
                         POPUP_setrevert(callback_outro,
-                                        !config_lookup_bool(&CONFIG,
-                                                            "outro"));
+                                        ! outro);
 
                         POPUP_add(NULL, "Enabled", callback_outro, 0);
                         POPUP_add(NULL, "Disabled", callback_outro, 1);
 
-                        POPUP_setselected(!config_lookup_bool
-                                          (&CONFIG, "outro"));
+                        POPUP_setselected(!outro);
                     }
                     break;
 
@@ -417,15 +422,16 @@ void sub_settings_draw(SDL_Surface * screen)
                 {
                 case 0:
                     {
+                         int soundfx = 0;
+                         config_lookup_bool(&CONFIG,
+                                                            "soundfx", &soundfx);
                         POPUP_setrevert(callback_soundfx,
-                                        !config_lookup_bool(&CONFIG,
-                                                            "soundfx"));
+                                        !soundfx);
 
                         POPUP_add(NULL, "Enabled", callback_soundfx, 0);
                         POPUP_add(NULL, "Disabled", callback_soundfx, 1);
 
-                        POPUP_setselected(!config_lookup_bool
-                                          (&CONFIG, "soundfx"));
+                        POPUP_setselected(!soundfx);
                     }
                     break;
                 }

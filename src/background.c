@@ -110,6 +110,7 @@ int bg_init(void)
 
 #else
     int bgtheme;
+    int result;
 
 	srandom(time(NULL));
 
@@ -117,7 +118,12 @@ int bg_init(void)
 
     pthread_mutex_init(&m_lock, NULL);
 
-    bgtheme = config_lookup_int(&CONFIG, "bgtheme");
+    result = config_lookup_int(&CONFIG, "bgtheme", &bgtheme);
+    if (result != CONFIG_TRUE)
+    {
+        fprintf(stderr, "Unable to find config bgtheme\n");
+        return -1;
+    }
 
     if (bgtheme >= 0
         && bgtheme < (sizeof(background_themes) / sizeof(t_rgb)))
@@ -164,7 +170,12 @@ int bg_init(void)
     ganim[1].posy = 240 - gradient[1]->h - 54;
     ganim[1].img = gradient[1];
 
-    bg_usewallpaper = config_lookup_bool(&CONFIG, "usewallpaper");;
+    result = config_lookup_bool(&CONFIG, "usewallpaper", &bg_usewallpaper);
+    if (result != CONFIG_TRUE)
+    {
+        fprintf(stderr, "Unable to find config usewallpaper\n");
+        return -1;
+    }
 
 	offset_time = random() % 20000;
 
@@ -175,7 +186,9 @@ int bg_init(void)
 
 void bg_load_wallpaper()
 {
-    const char *wallpaper = config_lookup_string(&CONFIG, "wallpaper");
+    const char *wallpaper = 0;
+
+    config_lookup_string(&CONFIG, "wallpaper", &wallpaper);
 
     if (background)
     {

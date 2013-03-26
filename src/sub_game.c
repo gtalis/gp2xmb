@@ -32,17 +32,6 @@ void sub_game_handle_input(unsigned int button);
 void sub_game_popexec(int value);
 int sub_game_remove_shortcut(config_setting_t * eroot, int index);
 
-/* Why do I need to specify these - why does not dirent do its job? */
-extern int scandir(__const char *__restrict __dir,
-                   struct dirent ***__restrict __namelist,
-                   int (*__selector) (__const struct dirent *),
-                   int (*__cmp) (__const void *, __const void *))
-__nonnull((1, 2));
-
-extern int alphasort(__const void *__e1, __const void *__e2)
-__THROW __attribute_pure__ __nonnull((1, 2));
-
-
 #define PICONSIZE 32
 
 /* stealing variables from the mediabar */
@@ -495,8 +484,9 @@ void sub_game_handle_input(unsigned int button)
                     if (item)
                     {
                         char *dir_name = (char *) calloc(1, 1024);
-
-                        if (config_lookup_bool(&CONFIG, "outro"))
+                         int outro = 0;
+                         config_lookup_bool(&CONFIG, "outro", &outro);
+                        if (outro)
                             gfx_draw_outro(SDL_GetVideoSurface());
 
 						gp2xmb_deinit();
