@@ -41,6 +41,8 @@ void splash_draw(SDL_Surface *screen)
 								 ,(screen->h-authorlogo->h)-10
 								 ,screen);*/
 	int alpha = 0;
+	int splash_delay = 0;
+	config_lookup_int(&CONFIG, "splashdelay", (int *)&splash_delay);
 
 	if(SDL_GetTicks() - splash_init_time < 1000)
 	{
@@ -50,13 +52,13 @@ void splash_draw(SDL_Surface *screen)
 	{
 		alpha = (SDL_GetTicks() - splash_init_time - 1000) / 4;
 	}
-	else if(SDL_GetTicks() - splash_init_time < SPLASH_DELAY-2000)
+	else if(SDL_GetTicks() - splash_init_time < splash_delay-2000)
 	{
 		alpha = 255;
 	}
-	else if(SDL_GetTicks() - splash_init_time < SPLASH_DELAY-1000)
+	else if(SDL_GetTicks() - splash_init_time < splash_delay-1000)
 	{
-		alpha = 255 - (SDL_GetTicks() - splash_init_time - (SPLASH_DELAY-2000)) / 4;
+		alpha = 255 - (SDL_GetTicks() - splash_init_time - (splash_delay-2000)) / 4;
 	}
 
 	LIMIT(alpha,0,255);
