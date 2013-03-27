@@ -25,6 +25,7 @@
 #include "gp2xmb.h"
 #include "mediabar.h"
 #include "batterymon.h"
+#include "clock.h"
 #include "volumecontrol.h"
 #include "splash.h"
 #include "scripts.h"
@@ -73,7 +74,12 @@ void quit(int code)
     cfg_save();
     gp2xmb_syncwait();
 
+    printf("destroying xmb...\n");
     xmb_destroy();
+
+
+    printf("Mix close audio...\n");
+
 
     Mix_CloseAudio();
     SDL_Quit();
@@ -310,6 +316,8 @@ int main(int argc, char *argv[])
 
             volume_draw(screen);
 
+	    clock_draw(screen);
+	    
 			#ifdef FPSCOUNTER
             gfx_draw_text(screen, font_small, 0, 0, 0, 0, fpsstr);
 			#endif
@@ -337,7 +345,7 @@ void *gp2xmb_tload(void *arg)
     int delay = SDL_GetTicks();
 
     int splashdelay = 0;
-    config_lookup_int(&CONFIG, "splashdelay", (long int *)&splashdelay);
+    config_lookup_int(&CONFIG, "splashdelay", (int *)&splashdelay);
 
    printf("splashdelay is %d\n", splashdelay);
 
@@ -358,6 +366,14 @@ void *gp2xmb_tload(void *arg)
     {
         fprintf(stderr,
                 "An error occured while initalising battery monitor.\n");
+        quit(1);
+    }
+
+    /* Init clock */
+    if (clock_init())         /* non-zero on failure */
+    {
+        fprintf(stderr,
+                "An error occured while initalising clock manager.\n");
         quit(1);
     }
 
