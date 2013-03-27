@@ -84,6 +84,21 @@ void firmware_execute(struct submenu *self)
     gp2xmb_init();
 }
 
+
+/**
+ * Media bar exit function, displays a msg box then exits
+ */
+void xmb_exit(struct submenu *menu)
+{
+    msgbox(SDL_GetVideoSurface(),NULL, "Good Bye", "Please come back soon...", NONE);
+    sleep(2);
+    msgbox_retval();
+    submenu = NULL;
+
+    relaunchsystem = 0;
+    exit(0);
+}
+
 /*
  * Launch the original frontend.
  *
@@ -177,16 +192,17 @@ int xmb_init(void)
     /* Populate the XMB */
     xmb_add(NULL, "settings", "Settings", NULL);
 
-    xmb_add(&last, "exit", "Original Frontend", NULL);
+    xmb_add(&last, "exit", "Exit", NULL);
     last->childlast->pmenu = (xmb_submenu *) malloc(sizeof(xmb_submenu));
     last->childlast->pmenu->draw = NULL;
     last->childlast->pmenu->handle_input = NULL;
     last->childlast->pmenu->xmb_offset_x = NULL;
     last->childlast->pmenu->xmb_offset_y = NULL;
-    last->childlast->pmenu->init = xmb_launch_frontend;
+    last->childlast->pmenu->init = xmb_exit;
     last->childlast->pmenu->destroy = NULL;
     last->childlast->pmenu->extra = NULL;
 
+#ifdef GP2MX_SETTINGS_SYSTEM_UPDATE
     xmb_add(&last, "update", "System Update", NULL);
     last->childlast->pmenu = (xmb_submenu *) malloc(sizeof(xmb_submenu));
     last->childlast->pmenu->draw = NULL;
@@ -196,7 +212,9 @@ int xmb_init(void)
     last->childlast->pmenu->init = callback_systemupdate;
     last->childlast->pmenu->destroy = NULL;
     last->childlast->pmenu->extra = NULL;
+#endif
 
+#ifdef GP2MX_SETTINGS_USB_CONNECTION
     xmb_add(&last, "usb", "USB Connection", NULL);
     last->childlast->pmenu = (xmb_submenu *) malloc(sizeof(xmb_submenu));
     last->childlast->pmenu->draw = sub_settings_draw;
@@ -206,6 +224,7 @@ int xmb_init(void)
     last->childlast->pmenu->init = sub_settings_init;
     last->childlast->pmenu->destroy = sub_settings_destroy;
     last->childlast->pmenu->extra = (void *) SETUSB;
+#endif
 
     xmb_add(&last, "conf_video", "Video Settings", NULL);
     xmb_add(&last, "conf_photo", "Photo Settings", NULL);
