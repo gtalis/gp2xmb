@@ -35,6 +35,7 @@
 #include "background.h"
 #include "configuration.h"
 #include "scripts.h"
+#include "systeminfo.h"
 
 #define XMBDEST 80
 
@@ -337,7 +338,14 @@ void sub_settings_draw(SDL_Surface * screen)
                 {
                 case 0:
                 	{
+						
+			   struct system_sw_info sys_swinfo;
+			   get_system_sw_info(&sys_swinfo);
+                        POPUP_setrevert(NULL, 0);
 
+                        POPUP_add(NULL, sys_swinfo.hostname, NULL, 0);
+
+                        POPUP_setselected(0);
                 	}
                 	break;
 
@@ -406,6 +414,28 @@ void sub_settings_draw(SDL_Surface * screen)
                         POPUP_setselected(0);
                     }
                     break;
+                case 10: /* System Information */
+                	{
+				char systeminfostr[60];
+				struct mem_info sys_meminfo;
+				struct system_sw_info sys_swinfo;
+				get_mem_info(&sys_meminfo);
+				get_system_sw_info(&sys_swinfo);
+
+			   POPUP_setrevert(NULL, 0);
+
+                        POPUP_add(NULL, "Mem Total: ", NULL, 0);
+			   snprintf(systeminfostr, 60,  "%s kB", sys_meminfo.total);
+			   POPUP_add(NULL, systeminfostr, NULL, 1);
+
+			    snprintf(systeminfostr, 60,  "%s kB", sys_meminfo.free);
+			   POPUP_add(NULL, "Mem Free: ", NULL, 2);
+			   POPUP_add(NULL, systeminfostr, NULL, 3);
+			   POPUP_add(NULL, "Kernel: ", NULL, 4);
+			   POPUP_add(NULL, sys_swinfo.kernel, NULL, 5);
+                        POPUP_setselected(0);
+			}
+			break;					
                 case 11:
                 	{
                 		gfx_draw_about(screen);

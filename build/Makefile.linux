@@ -40,7 +40,8 @@ OBJS = gp2xmb.o \
            utils.o \
 	   splash.o \
 	   scripts.o \
-	   clock.o
+	   clock.o \
+	   systeminfo.o
 
 %.o: ../src/%.cpp
 	$(CXX) $(CFLAGS) $(TREMOR_C) -c $<

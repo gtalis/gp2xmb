@@ -25,6 +25,7 @@
 #include "gp2xmb.h"
 #include "mediabar.h"
 #include "batterymon.h"
+#include "systeminfo.h"
 #include "clock.h"
 #include "volumecontrol.h"
 #include "splash.h"
@@ -478,6 +479,7 @@ void gp2xmb_init()
     progress_init();
     splash_init();
 	scripts_init();
+	system_info_init();
 
     pthread_create(&loaderid, NULL, gp2xmb_tload, NULL);
 }
